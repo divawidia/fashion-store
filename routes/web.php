@@ -16,7 +16,7 @@ use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\ProductImagesController;
 use App\Http\Controllers\ProductReviewsController;
 use App\Http\Controllers\ResponseController;
-use Illuminate\Support\Facades\Route;
+use Illuminate\Routing\Route;
 use Illuminate\Support\Facades\Auth;
 
 /*
@@ -44,6 +44,7 @@ Route::get('/verify', function () {
 // Route Login
 Route::get('/adminlogin', [AuthController::class, 'adminlogin'])->name('adminlogin');
 Route::post('/postlogin', [AuthController::class, 'postlogin']);
+
 Route::post('/postadmin', [AuthController::class, 'postloginAdmin'])->name('admin.login');
 Route::get('/logout', [AuthController::class, 'logout']);
 
@@ -112,7 +113,7 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::get('/response/{response}/edit', [ResponseController::class, 'edit']);
     Route::put('/response/{response}/edit', [ResponseController::class, 'update']);
     Route::get('/response/{response}/delete', [ResponseController::class, 'destroy']);
-    
+
     // Category Page
     Route::resource('/category', ProductCategoriesController::class);
 
@@ -133,7 +134,7 @@ Route::middleware('auth:admin')->prefix('admin')->group(function () {
     Route::get('/markreadadmin', [AdminController::class, 'markReadAdmin']);
 
     Route::post('/readSpesificNotif', [AdminController::class, 'readSpesificNotif']);
-    
+
     Route::post('/viewpdf', [PdfController::class, 'viewprint']);
     Route::post('/pdf', [PdfController::class, 'print']);
 });

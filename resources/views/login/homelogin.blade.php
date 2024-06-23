@@ -145,7 +145,7 @@
                                 <li><a href="#">Kid's</a></li>
                             </ul>
                         </li> -->
-                        <li class="{{ (request()->is('contact*')) ? 'active' : '' }}"><a href="{{ url('contact') }}">Contact</a></li>
+                        <li class="{{ (request()->is('contact*')) ? 'active' : '' }}"><a href="{{ url('users/contact') }}">Contact</a></li>
                         <!-- <li><a href="#">Pages</a>
                             <ul class="dropdown">
                                 <li><a href="./blog-details.html">Blog Details</a></li>

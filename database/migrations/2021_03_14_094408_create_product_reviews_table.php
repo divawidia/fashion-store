@@ -20,7 +20,7 @@ class CreateProductReviewsTable extends Migration
             $table->integer('rate');
             $table->text('content');
             $table->timestamps();
-            
+            $table->softDeletes();
             $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('user_id')->references('id')->on('users');
         });

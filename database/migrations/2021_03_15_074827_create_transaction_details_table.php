@@ -21,7 +21,7 @@ class CreateTransactionDetailsTable extends Migration
             $table->integer('discount');
             $table->integer('selling_price');
             $table->timestamps();
-
+            $table->softDeletes();
             $table->foreign('transaction_id')->references('id')->on('transactions');
             $table->foreign('product_id')->references('id')->on('products');
         });

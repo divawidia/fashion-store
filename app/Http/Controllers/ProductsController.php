@@ -213,7 +213,7 @@ class ProductsController extends Controller
             ->select('product_images.*')
             ->where($where)
             ->get();*/
-        return view('admin.product.image')->with('product', products::where('slug', $slug)->first());;
+        return view('admin.product.image')->with('product', products::where('slug', $slug)->first());
     }
 
     public function upload($slug)

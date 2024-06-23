@@ -20,7 +20,7 @@ class CreateCartsTable extends Migration
             $table->integer('qty');
             $table->enum('status', ['checkedout','notyet','cancelled']);
             $table->timestamps();
-
+            $table->softDeletes();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('product_id')->references('id')->on('products');
         });

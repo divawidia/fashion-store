@@ -19,6 +19,7 @@ class CreateCitiesTable extends Migration
             $table->unsignedInteger('city_id');
             $table->string('name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

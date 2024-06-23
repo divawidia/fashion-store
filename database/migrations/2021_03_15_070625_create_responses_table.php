@@ -19,7 +19,7 @@ class CreateResponsesTable extends Migration
             $table->bigInteger('admin_id')->unsigned();
             $table->text('content');
             $table->timestamps();
-
+            $table->softDeletes();
             $table->foreign('review_id')->references('id')->on('product_reviews');
             $table->foreign('admin_id')->references('id')->on('users');
         });

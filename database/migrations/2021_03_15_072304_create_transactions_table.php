@@ -27,8 +27,9 @@ class CreateTransactionsTable extends Migration
             $table->string('proof_of_payment');
             $table->enum('status',['unverified','verified','delivered','success','expired','canceled']);
             $table->timestamps();
+            $table->softDeletes();
 
-            
+
             $table->foreign('courier_id')->references('id')->on('couriers');
             $table->foreign('user_id')->references('id')->on('users');
         });

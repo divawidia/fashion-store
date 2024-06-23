@@ -18,7 +18,7 @@ class CreateProductCategoryDetailsTable extends Migration
             $table->bigInteger('product_id')->unsigned();
             $table->bigInteger('category_id')->unsigned();
             $table->timestamps();
-
+            $table->softDeletes();
             $table->foreign('product_id')->references('id')->on('products');
             $table->foreign('category_id')->references('id')->on('product_categories');
         });

@@ -18,6 +18,7 @@ class CreateProvincesTable extends Migration
             $table->unsignedInteger('province_id');
             $table->string('name');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

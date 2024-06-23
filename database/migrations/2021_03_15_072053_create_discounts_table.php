@@ -20,7 +20,7 @@ class CreateDiscountsTable extends Migration
             $table->date('start');
             $table->date('end');
             $table->timestamps();
-
+            $table->softDeletes();
             $table->foreign('product_id')->references('id')->on('products');
         });
     }
