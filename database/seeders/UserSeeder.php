@@ -2,10 +2,9 @@
 
 namespace Database\Seeders;
 
-use App\Models\admins;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Str;
-use App\models\User;
+use App\Models\User;
 class UserSeeder extends Seeder
 {
     /**
@@ -15,7 +14,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        
+
 
         User::create([
             'name' => 'user1',
@@ -23,7 +22,7 @@ class UserSeeder extends Seeder
             'username' => 'user1login',
             'profile_image' => 'fotouser',
             'level' => 'user',
-            'phone' => '081789876666',            
+            'phone' => '081789876666',
             'password' => bcrypt('user12345'),
             'remember_token' => Str::random(60),
         ]);
