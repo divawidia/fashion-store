@@ -16,7 +16,7 @@ use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\ProductImagesController;
 use App\Http\Controllers\ProductReviewsController;
 use App\Http\Controllers\ResponseController;
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 /*
